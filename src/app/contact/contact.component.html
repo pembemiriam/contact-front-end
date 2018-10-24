@@ -1,0 +1,27 @@
+
+<div class="container">
+  <h1>Contact List</h1>
+  <div  class="button">
+  <button mat-raised-button color="primary" [routerLink]="['/contact-create']">Create contact</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.city }}</td>
+        <td>{{ contact.email }}</td>
+        <td><a [routerLink]="['/contact-detail', contact.id]">Show Detail</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
